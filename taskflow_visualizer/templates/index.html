@@ -1,14 +1,13 @@
-<!doctype html>
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>taskflow_visualizer</title>
+  </head>
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>taskflow_visualizer</title>
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-</head>
-
-<body>
-    init
-</body>
+  <body>
+    <div id="react-app"></div>
+    {% render_bundle 'main' %}
+  </body>
 </html>
