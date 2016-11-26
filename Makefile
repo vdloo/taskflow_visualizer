@@ -12,9 +12,10 @@ default:
 	npm install
 	node_modules/.bin/webpack --config webpack.config.js
 run:
-	./manage.py makemigrations
-	./manage.py migrate
-	./manage.py runserver 8009
+	venv/bin/python manage.py makemigrations
+	venv/bin/python manage.py migrate
+	venv/bin/python scripts/create_fixture_data.py
+	venv/bin/python manage.py runserver 8009
 test:
 	./runtests.sh -1
 clean:
