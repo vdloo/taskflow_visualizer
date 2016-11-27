@@ -60,7 +60,7 @@ class ExampleTask(task.Task):
 
 
 def fixture_flow_factory():
-    f = lf.Flow("fixture_flow", retry=Times(2))
+    f = lf.Flow("fixture_flow", retry=Times(10))
     f.add(
         ExampleTask(
             "example_task_1"

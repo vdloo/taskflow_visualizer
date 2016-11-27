@@ -26,7 +26,7 @@ module.exports = {
                 exclude: /node_modules/, 
                 loader: 'babel-loader', 
                 query: {
-                    presets: ['react']
+                    presets: ['react', 'es2015']
                 }
             }
         ]
@@ -34,6 +34,6 @@ module.exports = {
     
     resolve: {
         modulesDirectories: ['node_modules'],
-        extensions: ['', '.js', '.jsx', 'axios']
+        extensions: ['', '.js', '.jsx']
     }   
 }
