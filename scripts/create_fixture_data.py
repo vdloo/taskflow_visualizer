@@ -42,13 +42,13 @@ JOBBOARD_CONF = {
 PERSISTENCE_URI = "sqlite:///{}".format(os.path.join(top_dir, 'db.sqlite3'))
 LOGBOOK_NAME = 'fixture_logbook'
 CONDUCTOR_NAME = 'conductor'
-JOBS = 10
+JOBS = 5
 
 
 class ExampleTask(task.Task):
     def execute(self, message):
         print("Task message: {}".format(message))
-        if randint(1, 2) == 1:
+        if randint(1, 3) == 1:
             message = "Failing task"
             print(message)
             raise RuntimeError(message)
@@ -60,7 +60,7 @@ class ExampleTask(task.Task):
 
 
 def fixture_flow_factory():
-    f = lf.Flow("fixture_flow", retry=Times(10))
+    f = lf.Flow("fixture_flow", retry=Times(5))
     f.add(
         ExampleTask(
             "example_task_1"

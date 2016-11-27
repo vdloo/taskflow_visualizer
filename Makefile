@@ -1,4 +1,4 @@
-.PHONY: all default run test clean
+.PHONY: all default run clean
 
 NAME := taskflow_visualizer
 VERSION := 0.1
@@ -16,8 +16,6 @@ run:
 	venv/bin/python manage.py migrate
 	venv/bin/python scripts/create_fixture_data.py
 	venv/bin/python manage.py runserver 8009
-test:
-	./runtests.sh -1
 clean:
 	git clean -xfd
 
