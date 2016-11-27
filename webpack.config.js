@@ -10,7 +10,7 @@ module.exports = {
         path: path.resolve('./taskflow_visualizer/static/js/bundles/'), 
         filename: '[name]-[hash].js', 
     },
-    
+
     plugins: [
         new BundleTracker({filename: './webpack-stats.json'}), 
         new webpack.ProvidePlugin({ 
@@ -26,7 +26,7 @@ module.exports = {
                 exclude: /node_modules/, 
                 loader: 'babel-loader', 
                 query: {
-                    presets: ['react'] 
+                    presets: ['react']
                 }
             }
         ]
@@ -34,6 +34,6 @@ module.exports = {
     
     resolve: {
         modulesDirectories: ['node_modules'],
-        extensions: ['', '.js', '.jsx'] 
+        extensions: ['', '.js', '.jsx', 'axios']
     }   
 }
