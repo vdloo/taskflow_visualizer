@@ -109,11 +109,14 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets'),
+    os.path.join(BASE_DIR, 'static/'),
 )
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
+        'BUNDLE_DIR_NAME': 'js/bundles/',
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
     }
 }
+
+PERSISTENCE_URI = "sqlite:///{}".format(os.path.join(BASE_DIR, 'db.sqlite3'))
+LOGBOOK_NAME = 'fixture_logbook'
